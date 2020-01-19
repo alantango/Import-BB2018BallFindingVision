@@ -1,3 +1,7 @@
+
+**NOTE**: *This is a copy from Team 997's gitHub. It's intended for learning purposes here with modifications on my own. The original repo is here:
+[https://github.com/Team997Coders/BB2018BallFindingVision](https://github.com/Team997Coders/BB2018BallFindingVision)*
+
 # Bunny Bot 2018 sample vision system
 
 This is a sample project based on the [WPILib sample build system](https://github.com/wpilibsuite/VisionBuildSamples) for building Java based vision targeting for running on systems other than the roboRIO. The object of this project is to make it easy to design, develop, code, test, and deploy FIRST WPILib vision processing apps from a Windows workstation. This project currently supports the following target platforms with a Windows development environment:
