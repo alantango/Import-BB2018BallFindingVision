@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+ntserver/__init__.py
+ntserver/command_line.py
+ntserver.egg-info/PKG-INFO
+ntserver.egg-info/SOURCES.txt
+ntserver.egg-info/dependency_links.txt
+ntserver.egg-info/entry_points.txt
+ntserver.egg-info/not-zip-safe
+ntserver.egg-info/requires.txt
+ntserver.egg-info/top_level.txt

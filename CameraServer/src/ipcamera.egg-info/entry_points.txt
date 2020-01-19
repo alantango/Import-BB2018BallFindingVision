@@ -1,0 +1,3 @@
+[console_scripts]
+ipcamera = ipcamera.command_line:main
+

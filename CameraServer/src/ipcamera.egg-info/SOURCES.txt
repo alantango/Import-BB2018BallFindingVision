@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+ipcamera/__init__.py
+ipcamera/command_line.py
+ipcamera.egg-info/PKG-INFO
+ipcamera.egg-info/SOURCES.txt
+ipcamera.egg-info/dependency_links.txt
+ipcamera.egg-info/entry_points.txt
+ipcamera.egg-info/not-zip-safe
+ipcamera.egg-info/top_level.txt

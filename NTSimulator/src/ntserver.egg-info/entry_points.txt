@@ -1,0 +1,3 @@
+[console_scripts]
+ntserver = ntserver.command_line:main
+

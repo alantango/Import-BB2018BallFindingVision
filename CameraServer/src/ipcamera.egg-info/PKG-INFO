@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: ipcamera
+Version: 0.0.1
+Summary: Make USB camera an IP Camera
+Home-page: https://github.com/Team997Coders/BB2018BallFindingVision/tree/master/CameraServer
+Author: Chuck Benedict
+Author-email: chuck@benedict.email
+License: MIT
+Description: UNKNOWN
+Keywords: first robotics frc roborio ipcamera usb mjpeg webcam
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Testing
