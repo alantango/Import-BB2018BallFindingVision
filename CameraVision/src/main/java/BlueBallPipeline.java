@@ -1,3 +1,5 @@
+import java.util.List;
+
 import org.opencv.core.*;
 
 public class BlueBallPipeline implements IBallPipeline {
@@ -6,9 +8,11 @@ public class BlueBallPipeline implements IBallPipeline {
     public void process(Mat source0) {
         pipeline.process(source0);
     }
+
     public MatOfKeyPoint findBlobsOutput() {
         return pipeline.findBlobsOutput();
     }
+
     public String getColor() {
         return "Blue";
     }
@@ -18,4 +22,12 @@ public class BlueBallPipeline implements IBallPipeline {
         // MatOfKeyPoint mkp = pipeline.findBlobsOutput();
         return getColor();
     }
+
+    @Override
+    public List<MatOfPoint> getCoutourMatPoints() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+ 
 }

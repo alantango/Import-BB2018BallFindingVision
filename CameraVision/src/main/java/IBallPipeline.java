@@ -1,3 +1,5 @@
+import java.util.List;
+
 import org.opencv.core.*;
 
 interface IBallPipeline {
@@ -5,4 +7,5 @@ interface IBallPipeline {
     public MatOfKeyPoint findBlobsOutput();
     public String getColor();
     public String getInfo();
+    public List<MatOfPoint> getCoutourMatPoints();
 }

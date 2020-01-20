@@ -92,7 +92,7 @@
     <language>Java</language>
     <className>PinkHouseGripPipeline</className>
     <implementWpilibPipeline>false</implementWpilibPipeline>
-    <saveDir>C:\Users\alan\GRIP</saveDir>
+    <saveDir>C:\Users\alan\git\Import-BB2018BallFindingVision\CameraVision\src\main\java</saveDir>
     <packageName></packageName>
     <moduleName>grip</moduleName>
   </codeGenerationSettings>

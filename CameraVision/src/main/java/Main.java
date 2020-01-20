@@ -124,7 +124,7 @@ public class Main {
         // outputImage2 = blueBallImageProcessor.annotate(inputImage);
 
         // outputImage = redBallImageProcessor.annotate(inputImage);
-        outputImage3 = pinkHouseImageProcessor.annotate(inputImage);
+        outputImage3 = pinkHouseImageProcessor.annotate(inputImage,true);
 
         // Write out the image
         // imageSource.putFrame(outputImage2);

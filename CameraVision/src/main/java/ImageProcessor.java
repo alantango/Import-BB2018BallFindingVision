@@ -67,28 +67,47 @@ public class ImageProcessor {
         processAsyncFuture = null;
     }
 
+    public Mat annotate(Mat inputImage){
+        return annotate(inputImage, false);
+    }
+
     /**
      * Annotate an image of found balls with circles and labels.
      * @param inputImage    The image to annotate.
      * @return              The annotated image.
      */
-    public Mat annotate(Mat inputImage) {
+    public Mat annotate(Mat inputImage, boolean withContour) {
+
+        Scalar drawColor = new Scalar(50,30,250);
+
         // Write a processed image that you want to restream
         // This is a marked up image of what the camera sees
+        
         Features2d.drawKeypoints(
             inputImage, 
             pipeline.findBlobsOutput(), 
             outputImage, 
             // new Scalar(2,254,255),              // yellowish circle 
-            new Scalar(200,30,30),              // yellowish circle 
+            drawColor,              // yellowish circle 
             Features2d.DRAW_RICH_KEYPOINTS);    // draws a full-sized circle around found point(s)
         
         // Ident balls on image
         for (KeyPoint k : pipeline.findBlobsOutput().toArray()) {
                         //pipeline.getInfo(), 
-            Imgproc.putText(outputImage, pipeline.getColor() + 
-                                ("{" + Math.round(k.pt.x) + ", " + Math.round(k.pt.y) + "}") ,
-                        k.pt, Core.FONT_HERSHEY_SCRIPT_COMPLEX, .75, new Scalar(200,30,30));
+            Imgproc.putText(outputImage, pipeline.getColor(),
+                        k.pt, Core.FONT_HERSHEY_SIMPLEX, .65, drawColor);
+        }
+        
+        if(withContour){
+
+            Imgproc.drawContours(outputImage, pipeline.getCoutourMatPoints(), -1, drawColor, 2);
+            
+            Imgproc.putText(outputImage, pipeline.getInfo(),
+                    new Point(30,30), Core.FONT_HERSHEY_SIMPLEX, .65, new Scalar(255,255,255));
+
+            Rect r = ((PinkHousePipeline)pipeline).getRectOfContour();
+            Imgproc.rectangle(outputImage, new Point(r.x, r.y), new Point(r.x+r.width, r.y+r.height), drawColor);
+
         }
         return outputImage;
     }
