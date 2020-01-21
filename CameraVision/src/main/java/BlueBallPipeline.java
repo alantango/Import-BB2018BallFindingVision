@@ -17,10 +17,15 @@ public class BlueBallPipeline implements IBallPipeline {
         return "Blue";
     }
 
-    @Override
     public String getInfo() {
         // MatOfKeyPoint mkp = pipeline.findBlobsOutput();
         return getColor();
+    }
+
+    @Override
+    public Rect getRectOfContour() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
@@ -28,6 +33,7 @@ public class BlueBallPipeline implements IBallPipeline {
         // TODO Auto-generated method stub
         return null;
     }
+
 
  
 }

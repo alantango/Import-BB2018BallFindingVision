@@ -78,7 +78,7 @@ public class ImageProcessor {
      */
     public Mat annotate(Mat inputImage, boolean withContour) {
 
-        Scalar drawColor = new Scalar(50,30,250);
+        Scalar drawColor = new Scalar(20,30,254);
 
         // Write a processed image that you want to restream
         // This is a marked up image of what the camera sees
@@ -102,11 +102,19 @@ public class ImageProcessor {
 
             Imgproc.drawContours(outputImage, pipeline.getCoutourMatPoints(), -1, drawColor, 2);
             
-            Imgproc.putText(outputImage, pipeline.getInfo(),
-                    new Point(30,30), Core.FONT_HERSHEY_SIMPLEX, .65, new Scalar(255,255,255));
+            Rect r = pipeline.getRectOfContour();
+            if(r==null){
+                return outputImage;
+            }
+            
+            String rectInfo = "contour TL: (" + r.x+", "+r.y+"), size: "+r.width+" X "+r.height+")";
+            Imgproc.putText(outputImage, rectInfo,  new Point(20,20), Core.FONT_HERSHEY_SIMPLEX, .65, new Scalar(255,255,255));
+            Imgproc.rectangle(outputImage, new Point(r.x, r.y), 
+                                new Point(r.x+r.width, r.y+r.height), 
+                                drawColor);
 
-            Rect r = ((PinkHousePipeline)pipeline).getRectOfContour();
-            Imgproc.rectangle(outputImage, new Point(r.x, r.y), new Point(r.x+r.width, r.y+r.height), drawColor);
+            Imgproc.putText(outputImage, "* [" + (r.x+r.width/2) + ", " + (r.y+r.height/2) + "]",
+                    new Point(r.x+r.width/2, r.y+r.height/2), Core.FONT_HERSHEY_SIMPLEX, .55, drawColor);
 
         }
         return outputImage;

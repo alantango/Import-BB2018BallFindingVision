@@ -17,9 +17,14 @@ public class RedBallPipeline implements IBallPipeline {
         return "Red";
     }
 
-    @Override
     public String getInfo() {
         return getColor();
+    }
+
+    @Override
+    public Rect getRectOfContour() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override

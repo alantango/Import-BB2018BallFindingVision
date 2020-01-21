@@ -29,8 +29,14 @@ public class PinkHousePipeline implements IBallPipeline {
     
     Rect rect;
 
-    @Override
     public String getInfo() {
+        if(rect!=null){
+            return "contour TL: (" + rect.x+", "+rect.y+"), size: "+rect.width+" X "+rect.height+")";
+        }
+        return "(none)";
+    }
+
+    public Rect getRectOfContour(){
         List<MatOfPoint> mps = pipeline.findContoursOutput();
         if(mps!=null && mps.size()>0){
             List<Point> allPoints = new ArrayList<>();
@@ -38,14 +44,11 @@ public class PinkHousePipeline implements IBallPipeline {
                 allPoints.addAll(mp.toList());
             }
             Rect r = Imgproc.boundingRect(new MatOfPoint(allPoints.toArray(new Point[0])));
-            this.rect = r;
-            return "contour: (" + r.x+", "+r.y+"), size: "+r.width+" X "+r.height+")";
+            
+            return r;
         }
-        return "(none)";
-    }
+        return null;
 
-    public Rect getRectOfContour(){
-        return this.rect;
     }
 
     
